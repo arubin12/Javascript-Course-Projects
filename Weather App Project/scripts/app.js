@@ -26,7 +26,15 @@ const updateUI = (data) => {
         card.classList.remove('d-none');
     }
 
-    
+    let timeSrc = null;
+    if(weather.IsDayTime){
+        timeSrc = 'img/day.svg';
+    } else {
+        timeSrc = 'img/night.svg';
+    }
+    time.setAttribute('src', timeSrc);
+    let iconSrc = `img/icons/${weather.WeatherIcon}.svg`;
+    icon.setAttribute('src', iconSrc);
 };
 
 
