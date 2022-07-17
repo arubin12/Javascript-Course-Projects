@@ -18,11 +18,11 @@ const getCity = async (city) => {
 
 const getConditions = async (cityKey) => {
     const base = 'http://dataservice.accuweather.com/currentconditions/v1/';
-    const query = `/${cityKey}?apikey=${key}`;
+    const query = `${cityKey}?apikey=${key}`;
 
     const response = await fetch(base + query);
     const data = await response.json();
-    return data;
+    return data[0];
 };
 
 // getCity('new york').then(cityKey => getConditions(cityKey))

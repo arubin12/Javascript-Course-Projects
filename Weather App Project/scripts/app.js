@@ -4,10 +4,11 @@ const card = document.querySelector('.card');
 
 
 const updateUI = (data) => {
-    const cityDets = data.cityDets;
-    const weather = data.weather;
+    
+    //destructuring the data
+    const {cityDets, weather} = data;
 
-    //update details
+    //update card on the website
     cardText.innerHTML = `
     <div class="text-muted text-uppercase text-center details">
         <h5 class="my-3">${cityDets.EnglishName}</h5>
@@ -18,14 +19,20 @@ const updateUI = (data) => {
         </div>
     </div>
     `;
+
+    //removing the d-none class if present
+    if(card.classList.contains('d-none')){
+        card.classList.remove('d-none');
+    }
 };
 
 
 const updateCity = async (city) => {
+    //get the city details and the weather using the city key
     const cityDets = await getCity(city);    
     const weather = await getConditions(cityDets.Key);
 
-    return {cityDets, weather};
+    return {cityDets: cityDets, weather: weather};
 };
 
 form.addEventListener('submit', event =>{
