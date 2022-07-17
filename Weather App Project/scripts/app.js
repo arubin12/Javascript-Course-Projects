@@ -1,7 +1,8 @@
 const form = document.querySelector('form');
 const cardText = document.querySelector('.details');
 const card = document.querySelector('.card');
-
+const time = document.querySelector('.time');
+const icon = document.querySelector('.icon img');
 
 const updateUI = (data) => {
     
@@ -24,6 +25,8 @@ const updateUI = (data) => {
     if(card.classList.contains('d-none')){
         card.classList.remove('d-none');
     }
+
+    
 };
 
 
