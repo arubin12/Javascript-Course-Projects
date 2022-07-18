@@ -1,3 +1,8 @@
+//This class controls the application page for the weather app, handling events 
+//occuring within the page.
+
+
+//Getting necessary html elements from the DOM
 const form = document.querySelector('form');
 const cardText = document.querySelector('.details');
 const card = document.querySelector('.card');
@@ -37,15 +42,6 @@ const updateUI = (data) => {
     let iconSrc = `img/icons/${weather.WeatherIcon}.svg`;
     icon.setAttribute('src', iconSrc);
 };
-
-
-// const updateCity = async (city) => {
-//     //get the city details and the weather using the city key
-//     const cityDets = await getCity(city);    
-//     const weather = await getConditions(cityDets.Key);
-
-//     return {cityDets: cityDets, weather: weather};
-// };
 
 form.addEventListener('submit', event =>{
     //prevent page refresh
