@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("dom file");const e=document.querySelector("body");console.log("index file"),e.style.background="peachpuff",(o=>{const t=document.createElement("h1");t.textContent="yeehaw",e.appendChild(t)})()})();
